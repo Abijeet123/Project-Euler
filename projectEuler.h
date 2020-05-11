@@ -72,3 +72,25 @@ vector<int> rightTruncatedNumber(int n)
 	return v;
 }
 
+vector<int> divisorsList(int n)
+{
+	vector<int> v;
+	int sqr = sqrt(n);
+	
+	if(sqr*sqr == n)
+	{
+		v.push_back(sqr);
+		sqr--;
+	}
+
+	for(int i =2;i <= sqr; i++)
+	{
+		if(n%i == 0)
+		{
+			v.push_back(i);
+			v.push_back(n/i);
+		}
+	}
+	return v;
+}
+
